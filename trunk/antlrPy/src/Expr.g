@@ -11,6 +11,7 @@ prog	: ( stat //{print $stat.tree.toStringTree();}
 
 stat	:	(  expr  FIN       ->  expr )
 	    |	(  ID '=' expr  FIN ->  ^('=' ID expr) )
+	    | ID ->
 	    ;
 
 expr	:	multExpr (('+'^|'-'^) multExpr)*
@@ -32,4 +33,8 @@ INT	:	'0'..'9'+ ;
 //NEWLINE	:	'\r'? '\n' ;
 FIN	:	'%' ;
 
-WS	:	(' '|'\t'|'\n'|'\r')+ {self.skip()} ;
+// WS	:	(' '|'\t'|'\n'|'\r')+ {self.skip()} ;
+
+IGNORE : .  {self.skip()} ;
+
+

@@ -18,9 +18,9 @@ def evaluate(value):
     return walker.prog()
 
 
-s="X=6 % 3+X % "
+s="^^ U X=7 % 3+X % _ ignore _"
 
 answer = evaluate(s)
 
-raw_input("Press enter to continue")
+#raw_input("Press enter to continue")
        
