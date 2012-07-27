@@ -22,4 +22,5 @@ s="X=6 % 3+X % "
 
 answer = evaluate(s)
 
-        
+raw_input("Press enter to continue")
+       
