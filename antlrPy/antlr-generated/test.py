@@ -21,21 +21,15 @@ def evaluate(value):
 
 class testcase(unittest.TestCase):
     def testSumaSimple(self):
-        answer = evaluate("""x=2
-2+x
-""")
+        answer = evaluate("""x=2 % 2+x%""")
         self.assertEqual(4,answer.pop())
 
     def testOperacion(self):
-        answer = evaluate("""x=2*5+10
-(x*x)+x
-""")
-        self.assertEqual(420,answer.pop())
+        answer = evaluate("""x=2*5+10 % (x*x)+x+2 % """)
+        self.assertEqual(422,answer.pop())
 
     def testEspacioBlanco(self):
-        answer = evaluate("""x= 2 * 5+ 10
-(x*x)+x
-""")
+        answer = evaluate("""x= 2 * 5+ 10%(x*x)+x%""")
         self.assertEqual(420,answer.pop())
         
 
